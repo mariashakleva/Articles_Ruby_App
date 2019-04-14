@@ -6,6 +6,6 @@ The app is designed to managae CRUD operation on Articles as well as adding comm
 
 The main goal was to get to know ROR and try to make a simple app that preforms basic operations.
 
-Run `budnel install` for all dependencies.
+Run `budle install` for all dependencies.
 
 
