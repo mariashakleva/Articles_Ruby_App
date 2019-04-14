@@ -1,25 +1,11 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+### Ruby on Rails app as part of the wokrshop - [Ruby Girls 2019](http://railsgirls.com/skopje.html)
 
-Things you may want to cover:
+The app is designed to managae CRUD operation on Articles as well as adding comments to a specific article. 
 
-* Ruby version
+The purpose of the workshop was to get to know ROR and try to make a simple app that preforms main operation.
 
-* System dependencies
+Run `budnel install` for all dependencies.
 
-* Configuration
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-# Articles_Ruby_App
