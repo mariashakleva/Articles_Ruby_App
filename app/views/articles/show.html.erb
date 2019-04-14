@@ -1,0 +1,50 @@
+<div class="section">
+    <div class="container">
+        <div class="columns is-centered">
+            <div class="column">
+                <%= image_tag "article-logo.png", size:"350" %>
+                <h1 class="is-size-4 has-has-text-weight-bold"><%= @article.title.titleize %></h1>
+                <i><span class="is-size-7 has-text-danger pt-3 mt-3">Created by <%= @article.user.email %></span></i>
+                <p class="is-size-7 has-text-grey pt-3 text-right"><time
+                        datetime="2016-1-1"><%=  @article.created_at.strftime("%m/%d/%Y") %></time></p>
+                <p><%= @article.description %></p>
+                <br>
+                <div class="section is-paddingless mt-3">
+                    <div class="button is-grey is-outlined">
+                        <%= link_to "Edit Article", edit_article_path(@article), class:"has-text-grey" %>
+                    </div>
+                    <div class="button is-danger is-outlined">
+                        <%= link_to "Delete Article", @article, method: :delete, class:"has-text-danger" %>
+                    </div>
+                </div>
+                <div class="section comments">
+                    <h3>Comments</h3>
+                    <% @article.comments.each do |comment| %>
+                    <p class="panel-block mt-3 d-around">
+                        <%= comment.message %>
+                        <%= link_to "Delete comment", comment, method: :delete, class:"button has-background-danger has-text-white" %>
+                    </p>
+                    </a>
+                <% end %>
+
+                <%= form_with(scope: :comment, model: @comment, url: comments_path, local: true) do |form| %>
+
+                    <div class="field mt-3">
+                        <div class="control">
+                            <%= form.text_area :message, class: "textarea", placeholder:"Add comment..." %>
+                        </div>
+                    </div>
+                    
+                    <%= form.hidden_field :user_id, value: current_user.id %>
+                    
+                    <%= form.hidden_field :article_id, value: @article.id %>
+                    
+                    <div class="actions">
+                        <%= form.submit class: "button" %>
+                    </div>
+                    <% end %>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

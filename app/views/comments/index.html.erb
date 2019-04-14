@@ -1,0 +1,5 @@
+<% @comments.each do |comment| %>
+  <h1> Comment: <h1>
+  <p> Article name: <%= link_to comment.article.title, comment.article %> </p>
+  <p> User email: <%= comment.user.email %> <p>
+<% end %>

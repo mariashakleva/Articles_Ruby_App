@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>App</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    <%= render "layouts/navbar" %> 
+
+      <% flash.each do |key, msg| %>
+      <% key == "notice" ? key = "success" : key = "danger" %>
+      <div class="message is-<%=key %>">
+        <div class="message-body has-text-centered">
+          <%= msg %>
+        </div>
+      </div>
+      <% end %>
+
+
+    <div class="container">
+      <%= yield %>
+    </div>
+
+  </body>
+</html>

@@ -1,0 +1,27 @@
+<div class="section">
+    <div class="container">
+        <div class="columns is-centered">
+            <div class="column">
+                <%= form_with model: @article, local: true do |form| %>
+                <div class="field">
+                    <label class="label">Title</label>
+                    <div class="control">
+                        <%= form.text_field :title, class: "input" %>
+                    </div>
+                </div>
+                <div class="field">
+                    <label class="label">Description</label>
+                    <div class="control">
+                        <%= form.text_area :description, class: "textarea" %>
+                    </div>
+                </div>
+
+                <%= form.hidden_field :user_id, value: current_user.id %>
+                <p class="submit-btn button has-background-danger has-text-white">
+                    <%= form.submit %>
+                </p>
+                <% end %>
+            </div>
+        </div>
+    </div>
+</div>

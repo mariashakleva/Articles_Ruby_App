@@ -1,0 +1,30 @@
+<div class="section login-sec">
+    <div class="container">
+        <div class="columns is-centered">
+            <div class="column">
+                <h1 class="has-text-weight-bold">Add New Article</h1>
+                <%= form_with scope: :article, url: articles_path, local: true do |form| %>
+                <div class="field">
+                    <label class="label">Title</label>
+                    <div class="control">
+                        <%= form.label :title %><br>
+                        <%= form.text_field :title, class:"title" %>
+                    </div>
+                </div>
+                <div class="field">
+                    <label class="label">Description</label>
+                    <div class="control">
+                        <%= form.label :description %><br>
+                        <%= form.text_area :description, class: "textarea" %>
+                    </div>
+                </div>
+
+                <%= form.hidden_field :user_id, value: current_user.id %>
+                <p class="submit-btn button has-background-danger has-text-white">
+                    <%= form.submit %>
+                </p>
+                <% end %>
+            </div>
+        </div>
+    </div>
+</div>
